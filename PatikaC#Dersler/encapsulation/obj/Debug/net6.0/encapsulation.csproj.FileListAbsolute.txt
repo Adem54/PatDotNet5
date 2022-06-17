@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\bin\Debug\net6.0\encapsulation.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\bin\Debug\net6.0\encapsulation.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\bin\Debug\net6.0\encapsulation.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\bin\Debug\net6.0\encapsulation.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\bin\Debug\net6.0\encapsulation.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\obj\Debug\net6.0\encapsulation.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\obj\Debug\net6.0\encapsulation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\obj\Debug\net6.0\encapsulation.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\obj\Debug\net6.0\encapsulation.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\obj\Debug\net6.0\encapsulation.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\obj\Debug\net6.0\encapsulation.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\obj\Debug\net6.0\refint\encapsulation.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\obj\Debug\net6.0\encapsulation.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\obj\Debug\net6.0\encapsulation.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\encapsulation\obj\Debug\net6.0\ref\encapsulation.dll

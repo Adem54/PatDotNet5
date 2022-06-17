@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\bin\Debug\net6.0\DictionaryCollection.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\bin\Debug\net6.0\DictionaryCollection.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\bin\Debug\net6.0\DictionaryCollection.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\bin\Debug\net6.0\DictionaryCollection.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\bin\Debug\net6.0\DictionaryCollection.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\obj\Debug\net6.0\DictionaryCollection.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\obj\Debug\net6.0\DictionaryCollection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\obj\Debug\net6.0\DictionaryCollection.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\obj\Debug\net6.0\DictionaryCollection.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\obj\Debug\net6.0\DictionaryCollection.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\obj\Debug\net6.0\DictionaryCollection.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\obj\Debug\net6.0\refint\DictionaryCollection.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\obj\Debug\net6.0\DictionaryCollection.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\obj\Debug\net6.0\DictionaryCollection.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DictionaryCollection\obj\Debug\net6.0\ref\DictionaryCollection.dll

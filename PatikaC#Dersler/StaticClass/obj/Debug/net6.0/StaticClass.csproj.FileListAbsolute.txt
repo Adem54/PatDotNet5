@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\bin\Debug\net6.0\StaticClass.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\bin\Debug\net6.0\StaticClass.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\bin\Debug\net6.0\StaticClass.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\bin\Debug\net6.0\StaticClass.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\bin\Debug\net6.0\StaticClass.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\obj\Debug\net6.0\StaticClass.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\obj\Debug\net6.0\StaticClass.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\obj\Debug\net6.0\StaticClass.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\obj\Debug\net6.0\StaticClass.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\obj\Debug\net6.0\StaticClass.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\obj\Debug\net6.0\StaticClass.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\obj\Debug\net6.0\refint\StaticClass.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\obj\Debug\net6.0\StaticClass.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\obj\Debug\net6.0\StaticClass.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StaticClass\obj\Debug\net6.0\ref\StaticClass.dll

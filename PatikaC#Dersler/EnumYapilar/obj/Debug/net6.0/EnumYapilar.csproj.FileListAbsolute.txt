@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\bin\Debug\net6.0\EnumYapilar.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\bin\Debug\net6.0\EnumYapilar.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\bin\Debug\net6.0\EnumYapilar.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\bin\Debug\net6.0\EnumYapilar.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\bin\Debug\net6.0\EnumYapilar.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\obj\Debug\net6.0\EnumYapilar.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\obj\Debug\net6.0\EnumYapilar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\obj\Debug\net6.0\EnumYapilar.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\obj\Debug\net6.0\EnumYapilar.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\obj\Debug\net6.0\EnumYapilar.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\obj\Debug\net6.0\EnumYapilar.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\obj\Debug\net6.0\refint\EnumYapilar.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\obj\Debug\net6.0\EnumYapilar.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\obj\Debug\net6.0\EnumYapilar.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\EnumYapilar\obj\Debug\net6.0\ref\EnumYapilar.dll

@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\bin\Debug\net6.0\RecursiveAndExtensionMethods.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\bin\Debug\net6.0\RecursiveAndExtensionMethods.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\bin\Debug\net6.0\RecursiveAndExtensionMethods.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\bin\Debug\net6.0\RecursiveAndExtensionMethods.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\bin\Debug\net6.0\RecursiveAndExtensionMethods.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\obj\Debug\net6.0\RecursiveAndExtensionMethods.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\obj\Debug\net6.0\RecursiveAndExtensionMethods.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\obj\Debug\net6.0\RecursiveAndExtensionMethods.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\obj\Debug\net6.0\RecursiveAndExtensionMethods.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\obj\Debug\net6.0\RecursiveAndExtensionMethods.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\obj\Debug\net6.0\RecursiveAndExtensionMethods.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\obj\Debug\net6.0\refint\RecursiveAndExtensionMethods.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\obj\Debug\net6.0\RecursiveAndExtensionMethods.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\obj\Debug\net6.0\RecursiveAndExtensionMethods.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\RecursiveAndExtensionMethods\obj\Debug\net6.0\ref\RecursiveAndExtensionMethods.dll

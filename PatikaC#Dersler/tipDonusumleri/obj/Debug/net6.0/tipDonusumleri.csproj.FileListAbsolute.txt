@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\bin\Debug\net6.0\tipDonusumleri.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\bin\Debug\net6.0\tipDonusumleri.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\bin\Debug\net6.0\tipDonusumleri.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\bin\Debug\net6.0\tipDonusumleri.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\bin\Debug\net6.0\tipDonusumleri.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\obj\Debug\net6.0\tipDonusumleri.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\obj\Debug\net6.0\tipDonusumleri.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\obj\Debug\net6.0\tipDonusumleri.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\obj\Debug\net6.0\tipDonusumleri.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\obj\Debug\net6.0\tipDonusumleri.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\obj\Debug\net6.0\tipDonusumleri.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\obj\Debug\net6.0\refint\tipDonusumleri.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\obj\Debug\net6.0\tipDonusumleri.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\obj\Debug\net6.0\tipDonusumleri.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\tipDonusumleri\obj\Debug\net6.0\ref\tipDonusumleri.dll

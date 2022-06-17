@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\bin\Debug\net6.0\TelRehberApp.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\bin\Debug\net6.0\TelRehberApp.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\bin\Debug\net6.0\TelRehberApp.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\bin\Debug\net6.0\TelRehberApp.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\bin\Debug\net6.0\TelRehberApp.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\obj\Debug\net6.0\TelRehberApp.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\obj\Debug\net6.0\TelRehberApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\obj\Debug\net6.0\TelRehberApp.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\obj\Debug\net6.0\TelRehberApp.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\obj\Debug\net6.0\TelRehberApp.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\obj\Debug\net6.0\TelRehberApp.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\obj\Debug\net6.0\refint\TelRehberApp.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\obj\Debug\net6.0\TelRehberApp.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\obj\Debug\net6.0\TelRehberApp.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\TelRehberApp\obj\Debug\net6.0\ref\TelRehberApp.dll

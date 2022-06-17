@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\bin\Debug\net6.0\metodlar.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\bin\Debug\net6.0\metodlar.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\bin\Debug\net6.0\metodlar.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\bin\Debug\net6.0\metodlar.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\bin\Debug\net6.0\metodlar.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\obj\Debug\net6.0\metodlar.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\obj\Debug\net6.0\metodlar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\obj\Debug\net6.0\metodlar.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\obj\Debug\net6.0\metodlar.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\obj\Debug\net6.0\metodlar.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\obj\Debug\net6.0\metodlar.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\obj\Debug\net6.0\refint\metodlar.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\obj\Debug\net6.0\metodlar.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\obj\Debug\net6.0\metodlar.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\metodlar\obj\Debug\net6.0\ref\metodlar.dll

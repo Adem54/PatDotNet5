@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\bin\Debug\net6.0\StringLibrary.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\bin\Debug\net6.0\StringLibrary.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\bin\Debug\net6.0\StringLibrary.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\bin\Debug\net6.0\StringLibrary.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\bin\Debug\net6.0\StringLibrary.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\obj\Debug\net6.0\StringLibrary.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\obj\Debug\net6.0\StringLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\obj\Debug\net6.0\StringLibrary.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\obj\Debug\net6.0\StringLibrary.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\obj\Debug\net6.0\StringLibrary.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\obj\Debug\net6.0\StringLibrary.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\obj\Debug\net6.0\refint\StringLibrary.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\obj\Debug\net6.0\StringLibrary.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\obj\Debug\net6.0\StringLibrary.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\StringLibrary\obj\Debug\net6.0\ref\StringLibrary.dll

@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\bin\Debug\net6.0\constructors.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\bin\Debug\net6.0\constructors.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\bin\Debug\net6.0\constructors.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\bin\Debug\net6.0\constructors.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\bin\Debug\net6.0\constructors.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\obj\Debug\net6.0\constructors.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\obj\Debug\net6.0\constructors.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\obj\Debug\net6.0\constructors.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\obj\Debug\net6.0\constructors.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\obj\Debug\net6.0\constructors.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\obj\Debug\net6.0\constructors.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\obj\Debug\net6.0\refint\constructors.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\obj\Debug\net6.0\constructors.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\obj\Debug\net6.0\constructors.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\constructors\obj\Debug\net6.0\ref\constructors.dll

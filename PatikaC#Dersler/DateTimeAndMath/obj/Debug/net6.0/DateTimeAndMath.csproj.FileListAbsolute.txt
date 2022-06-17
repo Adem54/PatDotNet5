@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\bin\Debug\net6.0\DateTimeAndMath.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\bin\Debug\net6.0\DateTimeAndMath.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\bin\Debug\net6.0\DateTimeAndMath.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\bin\Debug\net6.0\DateTimeAndMath.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\bin\Debug\net6.0\DateTimeAndMath.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\obj\Debug\net6.0\DateTimeAndMath.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\obj\Debug\net6.0\DateTimeAndMath.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\obj\Debug\net6.0\DateTimeAndMath.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\obj\Debug\net6.0\DateTimeAndMath.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\obj\Debug\net6.0\DateTimeAndMath.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\obj\Debug\net6.0\DateTimeAndMath.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\obj\Debug\net6.0\refint\DateTimeAndMath.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\obj\Debug\net6.0\DateTimeAndMath.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\obj\Debug\net6.0\DateTimeAndMath.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\DateTimeAndMath\obj\Debug\net6.0\ref\DateTimeAndMath.dll

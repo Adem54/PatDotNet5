@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\bin\Debug\net6.0\operators.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\bin\Debug\net6.0\operators.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\bin\Debug\net6.0\operators.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\bin\Debug\net6.0\operators.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\bin\Debug\net6.0\operators.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\obj\Debug\net6.0\operators.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\obj\Debug\net6.0\operators.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\obj\Debug\net6.0\operators.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\obj\Debug\net6.0\operators.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\obj\Debug\net6.0\operators.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\obj\Debug\net6.0\operators.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\obj\Debug\net6.0\refint\operators.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\obj\Debug\net6.0\operators.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\obj\Debug\net6.0\operators.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\operators\obj\Debug\net6.0\ref\operators.dll

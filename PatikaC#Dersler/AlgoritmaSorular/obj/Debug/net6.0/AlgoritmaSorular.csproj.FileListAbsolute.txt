@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\bin\Debug\net6.0\AlgoritmaSorular.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\bin\Debug\net6.0\AlgoritmaSorular.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\bin\Debug\net6.0\AlgoritmaSorular.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\bin\Debug\net6.0\AlgoritmaSorular.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\bin\Debug\net6.0\AlgoritmaSorular.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\obj\Debug\net6.0\AlgoritmaSorular.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\obj\Debug\net6.0\AlgoritmaSorular.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\obj\Debug\net6.0\AlgoritmaSorular.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\obj\Debug\net6.0\AlgoritmaSorular.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\obj\Debug\net6.0\AlgoritmaSorular.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\obj\Debug\net6.0\AlgoritmaSorular.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\obj\Debug\net6.0\refint\AlgoritmaSorular.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\obj\Debug\net6.0\AlgoritmaSorular.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\obj\Debug\net6.0\AlgoritmaSorular.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\AlgoritmaSorular\obj\Debug\net6.0\ref\AlgoritmaSorular.dll

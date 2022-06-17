@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\obj\Debug\net6.0\console_Programming.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\obj\Debug\net6.0\console_Programming.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\obj\Debug\net6.0\console_Programming.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\obj\Debug\net6.0\console_Programming.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\obj\Debug\net6.0\console_Programming.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\bin\Debug\net6.0\console_Programming.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\bin\Debug\net6.0\console_Programming.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\bin\Debug\net6.0\console_Programming.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\bin\Debug\net6.0\console_Programming.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\bin\Debug\net6.0\console_Programming.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\obj\Debug\net6.0\console_Programming.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\obj\Debug\net6.0\refint\console_Programming.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\obj\Debug\net6.0\console_Programming.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\obj\Debug\net6.0\console_Programming.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\console_Programming\obj\Debug\net6.0\ref\console_Programming.dll

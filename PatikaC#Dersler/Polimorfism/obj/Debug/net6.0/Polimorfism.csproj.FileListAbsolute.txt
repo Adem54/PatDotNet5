@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\bin\Debug\net6.0\Polimorfism.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\bin\Debug\net6.0\Polimorfism.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\bin\Debug\net6.0\Polimorfism.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\bin\Debug\net6.0\Polimorfism.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\bin\Debug\net6.0\Polimorfism.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\obj\Debug\net6.0\Polimorfism.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\obj\Debug\net6.0\Polimorfism.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\obj\Debug\net6.0\Polimorfism.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\obj\Debug\net6.0\Polimorfism.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\obj\Debug\net6.0\Polimorfism.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\obj\Debug\net6.0\Polimorfism.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\obj\Debug\net6.0\refint\Polimorfism.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\obj\Debug\net6.0\Polimorfism.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\obj\Debug\net6.0\Polimorfism.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Polimorfism\obj\Debug\net6.0\ref\Polimorfism.dll

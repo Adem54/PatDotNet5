@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\bin\Debug\net6.0\Collections1.exe
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\bin\Debug\net6.0\Collections1.deps.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\bin\Debug\net6.0\Collections1.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\bin\Debug\net6.0\Collections1.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\bin\Debug\net6.0\Collections1.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\obj\Debug\net6.0\Collections1.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\obj\Debug\net6.0\Collections1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\obj\Debug\net6.0\Collections1.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\obj\Debug\net6.0\Collections1.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\obj\Debug\net6.0\Collections1.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\obj\Debug\net6.0\Collections1.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\obj\Debug\net6.0\refint\Collections1.dll
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\obj\Debug\net6.0\Collections1.pdb
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\obj\Debug\net6.0\Collections1.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\PatikaC#Dersler\Collections1\obj\Debug\net6.0\ref\Collections1.dll
