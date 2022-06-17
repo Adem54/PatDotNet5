@@ -1,0 +1,77 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using WebApi.DbOperations;
+
+namespace WebApi
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+//Configuration=>Uygulama icerisindeki servislerin,bilesenlerin uygulamaya gosterildigi yerdir
+/*
+Database bizim icin bir, servistir, bir bilesendir.Bizim onu burda kullanabilmemiz icin onu 
+buraya inject ediyor olmamiz gerekiyor
+Biryerlerden dependency injection ile gectigimiz verileri kullanabilmek icin onlari burda 
+inject ediyor olmamiz gerekiyor, benim anladgim biz dependency injection mantigi ile veya
+ iste parametreye direk interface i .NetCore dan alarak kullandigmiz bazi servisleri,
+  kaynaklari new lenmesi icin, bizim onlari burda injeckt etmemiz gerekiyor..
+*/
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+
+            services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
+            });
+
+            //Startup.cs içerisinde ConfigureServices() içerisinde DbContext'in servis olarak eklenmesi
+            //DbContext olarak BookStoreDbContext i ekle ve ben bunu inmemory kullanmak istiyrouz...
+            //BookStoreDbContext imizin uygulama icerisinde gorunebilmesi icin, kullanabilmemiz icin servislere DbContext olarak gidip eklemesini soyledik ve artik bunu yaptigm icin ben uygulama icinde herhangi biryerde BookStoreDbContext i alip constructor aracgilig ile enjekte edip istedgim yerde kullanabilirim...
+            services.AddDbContext<BookStoreDbContext>(options =>
+                options.UseInMemoryDatabase(databaseName:"BookStoreDB"));
+            
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi v1"));
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+        }
+    }
+}
