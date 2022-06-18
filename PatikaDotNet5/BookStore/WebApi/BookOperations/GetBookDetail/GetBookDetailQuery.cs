@@ -2,6 +2,7 @@
 
 using System;
 using System.Linq;
+using AutoMapper;
 using WebApi.Common;
 using WebApi.DbOperations;
 
@@ -15,10 +16,12 @@ namespace WebApi.BookOperations.GetBookDetailQuery{
 //Handle icinde BookId yi kullanabilelim... BESTPRACTISE...COOOK ONEMLI..
         public int BookId {get; set;}
         private readonly BookStoreDbContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public GetBookDetailQuery(BookStoreDbContext dbContext)
+        public GetBookDetailQuery(BookStoreDbContext dbContext,IMapper mapper)
         {
             _dbContext=dbContext;
+            _mapper=mapper;
         }
 
    //Mantiga cok dikkat edelim, disardan kullanicidan gelecek olan input, parametreye alacagimiz degeri biz
@@ -50,13 +53,15 @@ namespace WebApi.BookOperations.GetBookDetailQuery{
            //Dikkat edelim once burda kullanicidan gelecek id uzerinden veritabanindan
            //book datamizi aliriz ardindan ise bu book u, viewmodel e map lemem lazm
            //onun icinde view model in once bir nesnesini olusturmamz gerekiyor
-           BookDetailViewModel vm=new BookDetailViewModel();
+        
            //book datasindaki verileri BookDetailViewModel imize set ederek burdan
            //datalarini set ettigmiz viewmodeli return edecegiz...
-           vm.Title=book.Title;
-           vm.Genre=((GenreEnum)book.GenreId).ToString();
-           vm.PageCount=book.PageCount;
-           vm.PublishDate=book.PublishDate.Date.ToString("dd/MM/yyyy");
+        //    BookDetailViewModel vm=new BookDetailViewModel();
+        //    vm.Title=book.Title;
+        //    vm.Genre=((GenreEnum)book.GenreId).ToString();
+        //    vm.PageCount=book.PageCount;
+        //    vm.PublishDate=book.PublishDate.Date.ToString("dd/MM/yyyy");
+            BookDetailViewModel vm=_mapper.Map<BookDetailViewModel>(book);
            return vm;
         }
 

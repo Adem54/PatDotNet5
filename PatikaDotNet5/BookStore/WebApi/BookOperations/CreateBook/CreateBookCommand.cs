@@ -2,6 +2,7 @@
 
 using System;
 using System.Linq;
+using AutoMapper;
 using WebApi.DbOperations;
 
 namespace WebApi.BookOperatins.CreateBook {
@@ -26,9 +27,11 @@ namespace WebApi.BookOperatins.CreateBook {
         //Model properties ini atama yapilacak controller icerisinde ondan dolayi da biz Model.Title
         //deyince, kullanicini gondermis oldugu Title i alabilmmis olacagiz...
             private readonly BookStoreDbContext _dbContext;
-            public CreateBookCommand(BookStoreDbContext dbContext)
+            private readonly IMapper _mapper;
+            public CreateBookCommand(BookStoreDbContext dbContext, IMapper mapper)
             {
                 _dbContext=dbContext;
+                _mapper=mapper;
             }
             
             /* 
@@ -53,11 +56,24 @@ namespace WebApi.BookOperatins.CreateBook {
                          //Simdi biz bize Controllerda atamasi yapilan Model icindeki datalardan Book entity mizden
                         //bir tane instance olusturup propertieslerini set edecegiz ve ondan sonra o set ettigmiz
                         //book entity instancesini veritabanina kaydedecegiz...
-                        book=new Book(); 
-                        book.Title=Model.Title;
-                        book.PublishDate=Model.PublishDate;
-                        book.PageCount=Model.PageCount;
-                        book.GenreId=Model.GenreId;
+                       
+                        //AUTOMAPPERIN KULLANACAGIMIZ YER TAM OLARAK BURDAKI 4 SATIR YERINE TEK SATIRDA BU ISI YAPMAK 
+                        //CreatBookMode tipinde olan Model ile Book id haric ayni datalara sahiptirler.Dolayisi ile biz
+                        //dicez ki CreateBookModel objesi Book objesine maplenebilir, donusturulebilir demem lazm
+                        //Bunun iicinde bunu MappinProfile icinde belirtmemiz gerekir
+                        //Burda biz CreateBookModel objesi ile disardan datayi aliyoruz ve sonra Book entity objesine
+                        //datalari aktariyorduk,, iste kaynagimiz CreateBookModel, targetimiz ise Book olacak
+                        //   book=new Book(); 
+                        // book.Title=Model.Title;
+                        // book.PublishDate=Model.PublishDate;
+                        // book.PageCount=Model.PageCount;
+                        // book.GenreId=Model.GenreId;
+                        book=_mapper.Map<Book>(Model);
+                        //Map<targetObje>() source uzerinden de tipi olacak, model ile gelen veriyi book objesi icerisine
+                        // o verileri maple, convert et demektir nerden faydalaniyor MappingPfofile da yaptimgz o configurasyondan 
+                        // faydalaniyor
+                        //Endpointimizin calisip calismadigni test ettgimiz zaman end-pointimizin calistigni gorebiliriz....
+
                         //Buraya dikkat edelim, biz kullanicidan id haric tum datalari aliriz, id yi biz
                         //burda veritabaninda auto increment yontemi ile kendisinin otomatik olusturmasini sagliyourz
                         //ama baska bir yontemle de biz bu isi Guid type ile direk Book constructorinda

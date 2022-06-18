@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using WebApi.Common;
 using WebApi.DbOperations;
 
@@ -14,9 +15,11 @@ namespace WebApi.BookOperations.GetBooks
     {
         //Sadece constructor icinden set edilsin disardan degistirilemesin baska bir yontemle
         private readonly BookStoreDbContext _dbContext;
-        public GetBooksQuery(BookStoreDbContext dbContext)
+        private readonly IMapper _mapper;
+        public GetBooksQuery(BookStoreDbContext dbContext,IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper=mapper;
         }
 /*
 UI ya donecegim veri setini View model de korumak istiyorum, yani istedgim veri tipinin UI ya
@@ -27,27 +30,31 @@ tanimliyoruz
         {
             var bookList = _dbContext.Books.OrderBy(book => book.Id).ToList<Book>();
             //BooksViewModel imide olustrduguma gore burda da artik BooksViewModel donmem gerekiyor
-            List<BooksViewModel> vm=new List<BooksViewModel>();
+         
+            List<BooksViewModel> vm=_mapper.Map<List<BooksViewModel>>(bookList);
+         
+            // List<BooksViewModel> vm=new List<BooksViewModel>();
             //veritabanindan gelen bookListesini foreach ile doneriz her bir book geldiginde 
             //book ile bilgileri, olusturdugumuz BookViewModel class inn icindeki proeprt ylere
             //atama yapariz
-            foreach (var book in bookList)
-            {
-                vm.Add(new BooksViewModel(){
-                     Title=book.Title,
-                     Genre=((GenreEnum)book.GenreId).ToString(),   
+            // foreach (var book in bookList)
+            // {
+
+            //     vm.Add(new BooksViewModel(){
+            //          Title=book.Title,
+            //          Genre=((GenreEnum)book.GenreId).ToString(),   
                      //book dan gelen GenreId yi biz Genre ye verdigmiz zaman
                      //GenreEnum da gelen sayi kac ise onun icin enum olarak ne 
                      //yazdi isek onu karsilik olarak verir ama enum GenreEnum tipinde aliyorz
                      //dolayisi ile onu string e cast etmemiz gerekecektir..
-                     PublishDate=book.PublishDate.Date.ToString("dd/MM/yy"),
+            //          PublishDate=book.PublishDate.Date.ToString("dd/MM/yy"),
                      //PublishDate i biz saat ile beraber kaydettk ama biz sadece tarih kismini almak istiyoruz
                      //.Date dersek sadece tarih kismini getirir, geri kalan kismi 0000 getirir ve onu da formatlayacagiz
                      //Ve de geriye string donuyoruz...
-                     PageCount=book.PageCount
-                });
+            //          PageCount=book.PageCount
+            //     });
                 //Artik bizim geriye vm donmemiz gerekiyor
-            }
+            // }
             return vm;
         }
         //Simdi burdaki isimizi bitirdikten sonra bookController icerisine gidip orda

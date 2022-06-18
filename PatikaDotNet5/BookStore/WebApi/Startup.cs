@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,15 +24,15 @@ namespace WebApi
             Configuration = configuration;
         }
 
-//Configuration=>Uygulama icerisindeki servislerin,bilesenlerin uygulamaya gosterildigi yerdir
-/*
-Database bizim icin bir, servistir, bir bilesendir.Bizim onu burda kullanabilmemiz icin onu 
-buraya inject ediyor olmamiz gerekiyor
-Biryerlerden dependency injection ile gectigimiz verileri kullanabilmek icin onlari burda 
-inject ediyor olmamiz gerekiyor, benim anladgim biz dependency injection mantigi ile veya
- iste parametreye direk interface i .NetCore dan alarak kullandigmiz bazi servisleri,
-  kaynaklari new lenmesi icin, bizim onlari burda injeckt etmemiz gerekiyor..
-*/
+        //Configuration=>Uygulama icerisindeki servislerin,bilesenlerin uygulamaya gosterildigi yerdir
+        /*
+        Database bizim icin bir, servistir, bir bilesendir.Bizim onu burda kullanabilmemiz icin onu 
+        buraya inject ediyor olmamiz gerekiyor
+        Biryerlerden dependency injection ile gectigimiz verileri kullanabilmek icin onlari burda 
+        inject ediyor olmamiz gerekiyor, benim anladgim biz dependency injection mantigi ile veya
+        iste parametreye direk interface i .NetCore dan alarak kullandigmiz bazi servisleri,
+        kaynaklari new lenmesi icin, bizim onlari burda injeckt etmemiz gerekiyor..
+        */
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -49,6 +50,8 @@ inject ediyor olmamiz gerekiyor, benim anladgim biz dependency injection mantigi
             //BookStoreDbContext imizin uygulama icerisinde gorunebilmesi icin, kullanabilmemiz icin servislere DbContext olarak gidip eklemesini soyledik ve artik bunu yaptigm icin ben uygulama icinde herhangi biryerde BookStoreDbContext i alip constructor aracgilig ile enjekte edip istedgim yerde kullanabilirim...
             services.AddDbContext<BookStoreDbContext>(options =>
                 options.UseInMemoryDatabase(databaseName:"BookStoreDB"));
+
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());    
             
         }
 
