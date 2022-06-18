@@ -11,7 +11,6 @@ namespace WebApi.DbOperations{
         //DbContextOptions<> bu da yine Microsoft.EntityFrameworkCore dan geliyor
             public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options):base(options)
             {
-                Console.WriteLine("Burasi da DbContext constructor");
             }
 /*
             DbSet<> Microsoft.Entityframework.Core dan geliyor ve burda entity mizi database de karsiligi 

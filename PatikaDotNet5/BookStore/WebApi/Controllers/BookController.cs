@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.BookOperatins.CreateBook;
+using WebApi.BookOperations.DeleteBook;
 using WebApi.BookOperations.GetBookDetailQuery;
 using WebApi.BookOperations.GetBooks;
+using WebApi.BookOperations.UpdateBook;
 // using WebApi.BookOperations.GetBooks;
 using WebApi.DbOperations;
 using static WebApi.BookOperatins.CreateBook.CreateBookCommand;
 using static WebApi.BookOperations.GetBookDetailQuery.GetBookDetailQuery;
+using static WebApi.BookOperations.UpdateBook.UpdateBookCommand;
 
 namespace WebApi.Controllers{
 
@@ -158,33 +161,42 @@ ve proje buyuyunce hersey kontrolumuzden cikmasin...
 */
 [HttpPut("{id}")]
 
-public IActionResult UpdateBook(int id,[FromBody]Book updatedBook){
- var book=_context.Books.SingleOrDefault(book=>book.Id==id);
- if(book is null){
-    return BadRequest();
- }   
- //Normalde hem 0 degilse yani bos degilse hemde ayni degilse diye bir kontrol yapmak lazm iste onu default keywordunu kullanarak yapiyoruz
- book.GenreId=updatedBook.GenreId != default ? updatedBook.GenreId : book.GenreId;
- book.Title=updatedBook.Title != default ? updatedBook.Title : book.Title;
- book.PageCount=updatedBook.PageCount != default ? updatedBook.PageCount : book.PageCount;
- book.PublishDate=updatedBook.PublishDate != default ? updatedBook.PublishDate : book.PublishDate;
- //SwaggerUI da default olarak eger biz degistirmessek o kendisi, 
- //kendi guncel tarihini veriyor, ya da bos birakirsak o zaman da 001 gibi default tarih ataniyor 
-    _context.SaveChanges();
- return Ok();
+public IActionResult UpdateBook(int id,[FromBody]UpdateBookModel updatedBook){
+    
+   
+
+    try
+    {
+        UpdateBookCommand command=new UpdateBookCommand(_context);
+         command.BookId=id;
+         command.Model=updatedBook;
+        command.Handle();
+    }
+    catch (Exception ex)
+    {
+        
+        return BadRequest(ex.Message);
+    }
+
+     return Ok();
 }
 
 [HttpDelete("{id}")]
 
-public IActionResult DeleteBook(int id){
-var book=_context.Books.SingleOrDefault(book=>book.Id==id);
-if(book is null){
-    return BadRequest();
-}
-_context.Books.Remove(book);
-_context.SaveChanges();
-return Ok();
-}
+    public IActionResult DeleteBook(int id){
+            try
+            {
+                DeleteBookCommand command=new DeleteBookCommand(_context);
+                command.BookId=id;  
+                command.Handle();
+            }
+            catch (Exception ex)
+            {
+                
+                return BadRequest(ex.Message);
+            }
+            return Ok();
+    }
 
     }
 }

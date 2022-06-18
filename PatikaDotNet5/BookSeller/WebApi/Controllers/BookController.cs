@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.BookOperations.CreateBook;
+using WebApi.BookOperations.GetBookDetail;
 using WebApi.BookOperations.GetBooks;
 // using WebApi.BookOperations.GetBooks;
 using WebApi.DbOperations;
 using static WebApi.BookOperations.CreateBook.CreateBookCommand;
+using static WebApi.BookOperations.GetBookDetail.GetBookDetailQuery;
 
 namespace WebApi.Controllers{
 
@@ -59,9 +61,19 @@ public IActionResult GetBooks(){
 }
 
 [HttpGet("{id}")]//https://localhost:5001/Books/1
-public Book GetBookById(int id){
-    var book=_context.Books.Where(book=>book.Id==id).SingleOrDefault();
-    return book;
+public IActionResult GetBookById(int id){
+   GetBookDetailQuery query=new GetBookDetailQuery(_context); 
+   BookDetailViewModel result;
+   try
+   {
+    query.BookId=id;
+    result=query.Handle();
+   }
+   catch (Exception ex)
+   {
+    return BadRequest(ex.Message);
+   }
+   return Ok(result);
 }
 
 /*

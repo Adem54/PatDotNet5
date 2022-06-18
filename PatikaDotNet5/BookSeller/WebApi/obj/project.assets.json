@@ -741,11 +741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatikaDotNet5\\BookSeller\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookSeller\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatikaDotNet5\\BookSeller\\WebApi\\WebApi.csproj",
+      "projectPath": "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookSeller\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\Data\\.nuget\\packages\\",
-      "outputPath": "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatikaDotNet5\\BookSeller\\WebApi\\obj\\",
+      "outputPath": "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookSeller\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Data\\AppData\\Roaming\\NuGet\\NuGet.Config",

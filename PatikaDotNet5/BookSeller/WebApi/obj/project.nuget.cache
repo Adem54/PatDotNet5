@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B/qBWJ3uwE7kI1rg84IAIuf9erUa7Pmglrz2l7lIz/wpGCyMHHJeGFMSrEkKlYJNV3U/XFjPoa1pfwUlh2IjVg==",
+  "dgSpecHash": "IQvXz105cxPHs0hh3GbwDQ4cKEb0sfwlVA9v4HqREM3UL6mwky5y3OxFy/7ziB9wANNdWC2RorrPbXcpB3W9rg==",
   "success": true,
-  "projectFilePath": "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatikaDotNet5\\BookSeller\\WebApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookSeller\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Data\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.6\\microsoft.entityframeworkcore.5.0.6.nupkg.sha512",
     "C:\\Users\\Data\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.6\\microsoft.entityframeworkcore.abstractions.5.0.6.nupkg.sha512",
