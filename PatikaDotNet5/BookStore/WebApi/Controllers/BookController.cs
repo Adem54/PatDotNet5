@@ -375,5 +375,15 @@ biz
            vm.PublishDate=book.PublishDate.Date.ToString("dd/MM/yyyy");
             BookDetailViewModel vm=_mapper.Map<BookDetailViewModel>(book);
            return vm;
+
+            GetBookDetailQuery icerisiinde...
+             List<BooksViewModel> vm=_mapper.Map<List<BooksViewModel>>(bookList);
+
+             MappingProfile constructor icinde
+              public MappingProfile(){
+                CreateMap<CreateBookModel,Book>();
+                CreateMap<Book,BookDetailViewModel>().ForMember(dest=>dest.Genre, opt=>opt.MapFrom(src=>((GenreEnum)src.GenreId).ToString()));
+                CreateMap<Book,BooksViewModel>().ForMember(dest=>dest.Genre, opt=>opt.MapFrom(src=>((GenreEnum)src.GenreId).ToString()));
+            }
                 
 */
