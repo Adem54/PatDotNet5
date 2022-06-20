@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using WebApi.DbOperations;
+using WebApi.Middlewares;
 
 namespace WebApi
 {
@@ -70,7 +71,9 @@ namespace WebApi
             app.UseRouting();
 
             app.UseAuthorization();
-
+//Custom middleware imz dir burasi
+            app.UseCustomExceptionMiddle();
+//Burasir request end-pointe dusme yeridir, end-pointlerin calisma yeri...
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

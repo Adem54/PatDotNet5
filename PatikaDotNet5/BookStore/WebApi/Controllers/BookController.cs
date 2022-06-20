@@ -3,16 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.BookOperatins.CreateBook;
+using WebApi.BookOperations.CreateBook;
 using WebApi.BookOperations.DeleteBook;
-using WebApi.BookOperations.GetBookDetailQuery;
+using WebApi.BookOperations.GetBookDetail;
 using WebApi.BookOperations.GetBooks;
 using WebApi.BookOperations.UpdateBook;
-// using WebApi.BookOperations.GetBooks;
 using WebApi.DbOperations;
 using static WebApi.BookOperatins.CreateBook.CreateBookCommand;
-using static WebApi.BookOperations.GetBookDetailQuery.GetBookDetailQuery;
+using static WebApi.BookOperations.GetBookDetail.GetBookDetailQuery;
+
 using static WebApi.BookOperations.UpdateBook.UpdateBookCommand;
 
 namespace WebApi.Controllers{
@@ -71,6 +74,8 @@ public IActionResult GetBookById(int id){
     try
     {
         query.BookId=id;
+        GetBookDetailQueryValidator validator=new GetBookDetailQueryValidator();
+        validator.ValidateAndThrow(query);
         result=query.Handle();    
     
     }
@@ -92,7 +97,7 @@ public Book Get([FromQuery] string id){
 */
 
    [HttpPost]
-
+   
 /*
 Biz post, put, delete islemlerinde de kullaniciyi dogru yonlendirmek icin ve kullanicinin
  bir data si eklenemediginde neden dolayi eklenemiyor vs gibi dogru yonlendirebilmek 
@@ -118,11 +123,34 @@ cunku kullanicidan bize id gelmeyecek add islemlerinde.....
     try
     {
         command.Model=newBook;
-        //ONEMLI.....
+        
+        //Validasyonu burda yapacagiz..
+       CreateBookCommandValidator validator=new CreateBookCommandValidator();
+        //ValidationResult result=validator.Validate(command);
+        validator.ValidateAndThrow(command);//usingFluentValidation dan geliir...
+        //FluentValidationResult tan geliyor ValidationResult-validator.Validate deki 
+        //Validate ise AbstractValidator den geliyor...
+        //Su an result bir objedir ve icerisinde, bizim validasyonu yapabilmemiz icin 
+        //olusturulums kontrol propertyleri var isValid gibi mesela...
+        //Tum kurallardan gecti ise isValid true doner gecmedi ise isValid false doner..
+        //IsValid ile beraber kurallardan hangilerinden gecemedi isem onu da bize mesaj
+        //ile ifade ediyor, result.Errors un altinda bir failure diye obje barindiriyor
+        
+        // if(!result.IsValid){
+        //     foreach (var item in result.Errors)
+        //     {
+        //         Console.WriteLine("Property "+ item.PropertyName+ "Error Message: "+ item.ErrorMessage);
+                //icinde bulundugum hata aldgimi objenin hangi field i hata aliyor bana
+                //bunu soyler-item.PropertyName
+                //Ayrica hangi hata mesajini firlatildigni soyler ki, biz bir bir field a bir den fazla
+                //kural yaziyoruz ve hangi kuralin cignendini de ancak mesaj la anlayabiliriz
+        //     }
+        // }else   
+        command.Handle();
+           //ONEMLI.....
         //CreateBookCommand class icindeki CrateBookModel tipindeki Model prperties ine kullanicidan
         //gelen datayi atama  yapiyoruz ki, biz bu gelen datayi, CrateBookCommand class inda Handle icinde
         //Book entitisinin alanlarini gelen data ile doldurelim...
-        command.Handle();
         //Biz CreateBookCommand class i icinden kullanici ayni kitap isminde bir kitap godnerirse
         //kullanicya exception firlattik bu exception i biz BookController dan da kullaniciya 
         //dogru birsekilde donebilmem gerekiyor,normlde throw hata firlatirsa kodu kiracaktir
@@ -161,17 +189,15 @@ olabildigince birbrinden ayiralim ve ayri tutalim ki bagimliliklariimzi minimuma
 ve proje buyuyunce hersey kontrolumuzden cikmasin...
 */
 [HttpPut("{id}")]
-
 public IActionResult UpdateBook(int id,[FromBody]UpdateBookModel updatedBook){
-    
-   
-
     try
     {
         UpdateBookCommand command=new UpdateBookCommand(_context);
          command.BookId=id;
          command.Model=updatedBook;
-        command.Handle();
+         UpdateBookCommandValidator validator=new UpdateBookCommandValidator();
+         validator.ValidateAndThrow(command);
+         command.Handle();
     }
     catch (Exception ex)
     {
@@ -188,12 +214,16 @@ public IActionResult UpdateBook(int id,[FromBody]UpdateBookModel updatedBook){
             try
             {
                 DeleteBookCommand command=new DeleteBookCommand(_context);
-                command.BookId=id;  
+                command.BookId=id; 
+                //Burda validation i BookId yi setledikten sonra ve de Handle methodundan
+                //once yapmamiz gerekir...BookId yi setlemeden once verirsek, hata verir 
+                //cunku int bir alan ve default olarak 0 verecek
+                DeleteBookCommandValidator validator=new DeleteBookCommandValidator();
+                validator.ValidateAndThrow(command);
                 command.Handle();
             }
             catch (Exception ex)
             {
-                
                 return BadRequest(ex.Message);
             }
             return Ok();

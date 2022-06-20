@@ -6,7 +6,7 @@ using AutoMapper;
 using WebApi.Common;
 using WebApi.DbOperations;
 
-namespace WebApi.BookOperations.GetBookDetailQuery{
+namespace WebApi.BookOperations.GetBookDetail{
 
     public class GetBookDetailQuery{
 

@@ -3,7 +3,8 @@
 using System.Collections.Generic;
 using AutoMapper;
 using static WebApi.BookOperatins.CreateBook.CreateBookCommand;
-using static WebApi.BookOperations.GetBookDetailQuery.GetBookDetailQuery;
+using static WebApi.BookOperations.GetBookDetail.GetBookDetailQuery;
+
 using static WebApi.BookOperations.GetBooks.GetBooksQuery;
 
 namespace WebApi.Common.MappingProfile 
