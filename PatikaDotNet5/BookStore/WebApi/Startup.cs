@@ -15,6 +15,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using WebApi.DbOperations;
 using WebApi.Middlewares;
+using WebApi.Services;
 
 namespace WebApi
 {
@@ -37,6 +38,14 @@ namespace WebApi
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+          //Startup.cs içerisinde ConfigureServices() içerisinde DbContext'in servis olarak eklenmesi
+            //DbContext olarak BookStoreDbContext i ekle ve ben bunu inmemory kullanmak istiyrouz...
+            //BookStoreDbContext imizin uygulama icerisinde gorunebilmesi icin, kullanabilmemiz icin servislere DbContext olarak gidip eklemesini soyledik ve artik bunu yaptigm icin ben uygulama icinde herhangi biryerde BookStoreDbContext i alip constructor aracgilig ile enjekte edip istedgim yerde kullanabilirim...
+            //   services.AddDbContext<BookStoreDbContext>(options =>
+            //     options.UseInMemoryDatabase(databaseName:"BookStoreDB"));
+            // services.AddAutoMapper(Assembly.GetExecutingAssembly()); 
+            //Bizim icin burda uygulama baslarken bir kez olusturup uygulama sonlana kadar calismasini 
+            //istiyorum ben dependency injection ile verdigmiz dependency lerin
         public void ConfigureServices(IServiceCollection services)
         {
 
@@ -46,13 +55,11 @@ namespace WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
             });
 
-            //Startup.cs içerisinde ConfigureServices() içerisinde DbContext'in servis olarak eklenmesi
-            //DbContext olarak BookStoreDbContext i ekle ve ben bunu inmemory kullanmak istiyrouz...
-            //BookStoreDbContext imizin uygulama icerisinde gorunebilmesi icin, kullanabilmemiz icin servislere DbContext olarak gidip eklemesini soyledik ve artik bunu yaptigm icin ben uygulama icinde herhangi biryerde BookStoreDbContext i alip constructor aracgilig ile enjekte edip istedgim yerde kullanabilirim...
             services.AddDbContext<BookStoreDbContext>(options =>
                 options.UseInMemoryDatabase(databaseName:"BookStoreDB"));
-
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());    
+            services.AddAutoMapper(Assembly.GetExecutingAssembly()); 
+           // services.AddSingleton<ILoggerService,ConsoleLogger>();   
+            services.AddSingleton<ILoggerService,DBLogger>();   
             
         }
 
@@ -65,11 +72,8 @@ namespace WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi v1"));
             }
-
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthorization();
 //Custom middleware imz dir burasi
             app.UseCustomExceptionMiddle();

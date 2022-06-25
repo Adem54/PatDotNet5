@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using WebApi.Entities;
 
 namespace WebApi.DbOperations{
     
@@ -38,6 +39,39 @@ namespace WebApi.DbOperations{
                         if(context.Books.Any()){
                             return;//database icine veri var ise direk return et ve bitir methodu diyoruz...
                         }
+
+                        context.Authors.AddRange(
+                              new Author{
+                                FirstName="Margaret",
+                                LastName="Atwood",
+                                BirthDate=new System.DateTime(1972,03,14)
+                              },
+                              new Author{
+                                FirstName="Jokha",
+                                LastName="Alharthi",
+                                BirthDate=new System.DateTime(1977,07,04)
+                              },
+                              new Author{
+                                FirstName=" Achuthan",
+                                LastName="Namboodri",
+                                BirthDate=new System.DateTime(1982,11,18)
+                              }  
+
+                        );
+
+
+                        //isActive default oalrak true gelecek
+                        context.Genres.AddRange(
+                            new Genre{
+                                 Name="Personal Growth"   
+                            },
+                            new Genre{
+                                 Name="Science Fiction"   
+                            },
+                            new Genre{
+                                 Name="Romance"   
+                            });
+
                     //Liste icine liste veya dizi eklerken AddRange kullaniriz...
                     // Ayrica biz birden fazla elementi yanyana da ekleyebiliyoruz AddRange ile
                         context.Books.AddRange(
@@ -48,6 +82,7 @@ namespace WebApi.DbOperations{
                                         // Id=1,
                                         Title="Lean StartUp",
                                         GenreId=1,//Personal Growth,
+                                        AuthorId=1,
                                         PageCount=200,
                                         PublishDate=new System.DateTime(2010,05,23)
                                     },
@@ -55,13 +90,15 @@ namespace WebApi.DbOperations{
                                         // Id=2,
                                         Title="Herland",
                                         GenreId=2,//Science Fiction,
+                                        AuthorId=2,
                                         PageCount=250,
                                         PublishDate=new System.DateTime(2011,07,13)
                                     },
                                     new Book{
                                         // Id=3,
                                         Title="Dune",
-                                        GenreId=2,//Noval
+                                        GenreId=3,//Romance
+                                        AuthorId=3,
                                         PageCount=540,
                                         PublishDate=new System.DateTime(2004,02,6)
                                     }   

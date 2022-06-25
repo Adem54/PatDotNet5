@@ -6,17 +6,17 @@ using AutoMapper;
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.BookOperatins.CreateBook;
-using WebApi.BookOperations.CreateBook;
-using WebApi.BookOperations.DeleteBook;
-using WebApi.BookOperations.GetBookDetail;
-using WebApi.BookOperations.GetBooks;
-using WebApi.BookOperations.UpdateBook;
+using WebApi.Aoplication.BookOperations.Queries.GetBooks;
+using WebApi.Application.BookOperatins.Commands.CreateBook;
+using WebApi.Application.BookOperations.Commands.CreateBook;
+using WebApi.Application.BookOperations.Commands.DeleteBook;
+using WebApi.Application.BookOperations.Commands.UpdateBook;
+using WebApi.Application.BookOperations.Queries.GetBookDetail;
+using WebApi.Application.BookOperations.UpdateBook;
 using WebApi.DbOperations;
-using static WebApi.BookOperatins.CreateBook.CreateBookCommand;
-using static WebApi.BookOperations.GetBookDetail.GetBookDetailQuery;
-
-using static WebApi.BookOperations.UpdateBook.UpdateBookCommand;
+using static WebApi.Application.BookOperatins.Commands.CreateBook.CreateBookCommand;
+using static WebApi.Application.BookOperations.Queries.GetBookDetail.GetBookDetailQuery;
+using static WebApi.Application.BookOperations.UpdateBook.UpdateBookCommand;
 
 namespace WebApi.Controllers{
 
@@ -40,17 +40,7 @@ namespace WebApi.Controllers{
             _mapper=mapper;
            
         }
-  /*
-        Artik biz BookList emiz yerine _context.Books u kullanabiliriz....
-        Tabi ki biz artik islemlerimiz static bir listede yapmiyoruz EntityframeworkCore icinde 
-        yapiyoruz o zaman ne yapacagiz CRUD islemlerimizin hepsinini sonunda database e kaydetme 
-        islemi olan Savechanges islemini yapmamiz gereior.UNITOFWORK mantiginda isemimizi yapmamiz gerekiyor...
-        TAbi biz eger database icinde degisiklik yaparsak yani database data ekleme, data guncelleme 
-        ve data silme islemlerinde savechanges yapariz yoksa data listelemede oyle bir iseleme ihtiyacimiz yokk.....
 
-       
-
-*/
 
 [HttpGet] //https://localhost:5001/Books
 public IActionResult GetBooks(){
@@ -58,129 +48,42 @@ public IActionResult GetBooks(){
     // var bookList=_context.Books.OrderBy(book=>book.Id).ToList<Book>();
     // return bookList;
     GetBooksQuery query=new GetBooksQuery(_context,_mapper);
+    //input um olmadigi icin, yani parametreye disardan deger gelmedigi icin
+    //validasyon islemimiz olmayacak burda...
     var result=query.Handle();
     return Ok(result);
-    /*
-    Biz artik burda hem 200 bilgisini don hemde, objeyi don diyecegiz..
-    Tabi bunu yapabilemiz icin IActionResult dondurursek, tipten bagimsiz olarak
-    http Ok bilgisi ile birlikte datayi da donmek istersek iste bu sekilde ActionResult doneriz..
-    */
+  
 }
 
 [HttpGet("{id}")]//https://localhost:5001/Books/1
 public IActionResult GetBookById(int id){
-    GetBookDetailQuery query=new GetBookDetailQuery(_context,_mapper);
-    BookDetailViewModel result;
-    try
-    {
+        GetBookDetailQuery query=new GetBookDetailQuery(_context,_mapper);
+        BookDetailViewModel result;
         query.BookId=id;
         GetBookDetailQueryValidator validator=new GetBookDetailQueryValidator();
         validator.ValidateAndThrow(query);
         result=query.Handle();    
     
-    }
-    catch (Exception ex)
-    {
-        
-        return BadRequest(ex.Message);
-    }
     return Ok(result);
 }
 
-/*
-Bir Controller icinde 1 tane [HttpGet] olmali kurali vardir Controller icinde ondan dolayi 2 kez [HttpGet] olursa hata aliriz..
-[HttpGet]//https://localhost:5001/Books?id=3
-public Book Get([FromQuery] string id){
-    var book=BookList.Where(book=>book.Id==Convert.ToInt32(id)).SingleOrDefault();
-    return book;
-}
-*/
-
    [HttpPost]
-   
-/*
-Biz post, put, delete islemlerinde de kullaniciyi dogru yonlendirmek icin ve kullanicinin
- bir data si eklenemediginde neden dolayi eklenemiyor vs gibi dogru yonlendirebilmek 
- icin kullaniciya bir sey donmemiz gerekiyor ondan dolayi da bize .Net5 ten gelen IActionResult kullaniriz..
-*/
-/*
-COOOK ONEMLI-BUNU YENI OGRENIYORUMMM
-Burda biz input olarak parametremize Book book entity geliyor bu dogru degildir bu yanlis bir yaklasimdir
-Kullanicini belki de Book entity si iicndeki data lardan 2 tanesine  ihtiyaci var ama biz tum datayi acmisiz
-kullaniciya hem data guvenligi hem de performansi olumsuz etkileyecektir zamanla
-Biz inputa Book u alarak ve Book u output olarak donerek de bir bagimlilik olusturuyorz aslinda
-AddBook da da biz entity olarak baska bir model aliyor olmamiz gerekiyor, dogrudan entity yi input olarak almak
-parametremize almak dogru bir yaklasim degildir
-Simdi gidip bu response action imizi da refactor edecdgiz...BookOpeartions klasoru altinda
-*/
-/*
-Biz artik disardan kullanicidan CreateBookModel tipinde bir data alacagim , bu data icinde Id yok id dahil degil
-cunku kullanicidan bize id gelmeyecek add islemlerinde.....
-
-*/
    public IActionResult AddBook([FromBody]CreateBookModel newBook){
     CreateBookCommand command=new CreateBookCommand(_context,_mapper);
-    try
-    {
+    //try-catch leri biz burdan kaldiriyoruz cunku, middleware de
+    //handle edecegiz burdan firlatilacak bir hata yi ve 
+    //de o hata yi da json olarak loglayacagiz..yazdiracagiz
+    
         command.Model=newBook;
-        
         //Validasyonu burda yapacagiz..
        CreateBookCommandValidator validator=new CreateBookCommandValidator();
         //ValidationResult result=validator.Validate(command);
-        validator.ValidateAndThrow(command);//usingFluentValidation dan geliir...
-        //FluentValidationResult tan geliyor ValidationResult-validator.Validate deki 
-        //Validate ise AbstractValidator den geliyor...
-        //Su an result bir objedir ve icerisinde, bizim validasyonu yapabilmemiz icin 
-        //olusturulums kontrol propertyleri var isValid gibi mesela...
-        //Tum kurallardan gecti ise isValid true doner gecmedi ise isValid false doner..
-        //IsValid ile beraber kurallardan hangilerinden gecemedi isem onu da bize mesaj
-        //ile ifade ediyor, result.Errors un altinda bir failure diye obje barindiriyor
-        
-        // if(!result.IsValid){
-        //     foreach (var item in result.Errors)
-        //     {
-        //         Console.WriteLine("Property "+ item.PropertyName+ "Error Message: "+ item.ErrorMessage);
-                //icinde bulundugum hata aldgimi objenin hangi field i hata aliyor bana
-                //bunu soyler-item.PropertyName
-                //Ayrica hangi hata mesajini firlatildigni soyler ki, biz bir bir field a bir den fazla
-                //kural yaziyoruz ve hangi kuralin cignendini de ancak mesaj la anlayabiliriz
-        //     }
-        // }else   
+        validator.ValidateAndThrow(command);
         command.Handle();
-           //ONEMLI.....
-        //CreateBookCommand class icindeki CrateBookModel tipindeki Model prperties ine kullanicidan
-        //gelen datayi atama  yapiyoruz ki, biz bu gelen datayi, CrateBookCommand class inda Handle icinde
-        //Book entitisinin alanlarini gelen data ile doldurelim...
-        //Biz CreateBookCommand class i icinden kullanici ayni kitap isminde bir kitap godnerirse
-        //kullanicya exception firlattik bu exception i biz BookController dan da kullaniciya 
-        //dogru birsekilde donebilmem gerekiyor,normlde throw hata firlatirsa kodu kiracaktir
-        //Iste bu hata mesajini benim burda anlamli bir sekilde yakalayabilmem icin try-catch ile
-        //bu islemi ele alacagim
-    }
-    catch (Exception ex)//ex aslinda bizim mesajimiz
-    {
-        //Ayni kitap bir daha eklenmeye calisilirsa o zaman hata firlatacakki kullanici da anlayacak
-        //kitabin neden eklenemedgini
-        return BadRequest(ex.Message);
-        //Bizim,CreateBookCommand class icersindeki firlattgimiz exception in mesaj ini donder diyoruz.. 
-    }
-    
-
-   
+       
     return Ok();
    }
    //Burayi test ederken serverimizi tekrar bir kapatip calistiralim yoksa yaptgimiz islemler tam uygulanmayabiliyor
-
-
-/*Normalde post isleminde yeni data eklenirken kullanici tarafindan id gonderilmez, 
-id yi ya auto-increment yolu ile direk database den ya da Guid type kullanarak
- kendimiz direk entity class inda constructor icinde her yeni data eklendiginde 
- kendisi otomatik uniq id olustursun deriz ve bunlar back-endde oluyor dolayisi ile id bilgisi bize disardan gelmez....
-//PUt ve delete islemlerinde de zaten kullanici bizim ona sundugmuz data listesi
- uzerinden bir urune veya book nesnesine tiklayacagi icin biz ona zaten o datanin 
- id sini gondermis oluyoruz o da bize o id ile tekrar geliyor ondan da dolayi,
-  biz gonderilen id uzerinden cok rahat birsekidle islemimizi yapabiliyoruz
-*/
 
 /*
 COOOK ONEMLI---BUNU ILK DEFA OGRENIYORUMM....
@@ -190,29 +93,19 @@ ve proje buyuyunce hersey kontrolumuzden cikmasin...
 */
 [HttpPut("{id}")]
 public IActionResult UpdateBook(int id,[FromBody]UpdateBookModel updatedBook){
-    try
-    {
+  
         UpdateBookCommand command=new UpdateBookCommand(_context);
          command.BookId=id;
          command.Model=updatedBook;
          UpdateBookCommandValidator validator=new UpdateBookCommandValidator();
          validator.ValidateAndThrow(command);
          command.Handle();
-    }
-    catch (Exception ex)
-    {
-        
-        return BadRequest(ex.Message);
-    }
-
      return Ok();
 }
 
 [HttpDelete("{id}")]
 
     public IActionResult DeleteBook(int id){
-            try
-            {
                 DeleteBookCommand command=new DeleteBookCommand(_context);
                 command.BookId=id; 
                 //Burda validation i BookId yi setledikten sonra ve de Handle methodundan
@@ -221,11 +114,6 @@ public IActionResult UpdateBook(int id,[FromBody]UpdateBookModel updatedBook){
                 DeleteBookCommandValidator validator=new DeleteBookCommandValidator();
                 validator.ValidateAndThrow(command);
                 command.Handle();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
             return Ok();
     }
 

@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
+using WebApi.Entities;
+
 namespace WebApi.DbOperations{
     /*Bu class in bir DbContext olabilmesi icin EntityFrameWorkCore dan DbContext i
      inherit etmesi ve onun ozelliklerini alabilmesi gerekir ve de new lendigi zaman 
@@ -12,6 +14,12 @@ namespace WebApi.DbOperations{
             public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options):base(options)
             {
             }
+
+          public  DbSet<Book> Books {get; set;}
+          public  DbSet<Genre> Genres {get; set;}
+          public DbSet<Author> Authors {get; set;}
+    }
+}
 /*
             DbSet<> Microsoft.Entityframework.Core dan geliyor ve burda entity mizi database de karsiligi 
              olan tablo olan Books a bagliyoruz ve bu yaklasim codefirst yaklasimidir ondan dolayi,
@@ -21,9 +29,6 @@ namespace WebApi.DbOperations{
             Entityframeworkcore burda bizim kod tarafindaki, Book entity imiz ile veritabnindaki
              Books arasinda bir kopru bir baglanti kuruyor
             */
-          public  DbSet<Book> Books {get; set;}
-    }
-}
 /*
 Burda inMemory database kullanacagiimz icin ve get yaptigmizda tamamen bos gelmemsi icin 
 simdi icine bir data ekleyecegiz, goredebilmek icin ozellikle

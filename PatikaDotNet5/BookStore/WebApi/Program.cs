@@ -20,7 +20,8 @@ namespace WebApi
             Biz program her ayaga kalktiginda DataGenerator un de calismasini istiyorum,
              veritabanim default datalar la karsima cikmasi icin ondan dolayi da program.cs 
              run etmeden once DataGenerator u devereye sokmam gerekiyor
-             CreateHostBuilder(args).Build().Run(); bunu bir parcalayalim, 
+             CreateHostBuilder(args).Build().Run();
+              bunu bir parcalayalim, 
              Buil() e kadar olan kisim host diye bir degiskene atayalim
             Burda kisaca sunu yapiyoruz bizim eger uygulama basladiginda
              tetiklenmesini istedgimiz methodlarimiz olursa o methoda paramtre olarak
@@ -63,8 +64,6 @@ namespace WebApi
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                 
-
                     webBuilder.UseStartup<Startup>();
                 });
     }
