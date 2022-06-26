@@ -6,9 +6,9 @@ using WebApi.DbOperations;
 
 namespace WebApi.Application.AuthorOperations.Commands.DeleteAuthor {
     public class DeleteAuthorCommand {
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         public int AuthorId {get; set;}
-        public DeleteAuthorCommand(BookStoreDbContext dbContext)
+        public DeleteAuthorCommand(IBookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -21,7 +21,7 @@ namespace WebApi.Application.AuthorOperations.Commands.DeleteAuthor {
             //Sonra gonderilen id deki yazarin kitbi var mi  ona bakariz...
             var book=_dbContext.Books.Include(x=>x.Author).SingleOrDefault(b=>b.AuthorId==AuthorId && b.PublishDate < DateTime.Now);
             if(book is not null)throw new InvalidOperationException("Yayinda kitabi olan bir yazari silemezsiniz...");
-            _dbContext.Remove(author);
+            _dbContext.Authors.Remove(author);
             _dbContext.SaveChanges();
 
         }

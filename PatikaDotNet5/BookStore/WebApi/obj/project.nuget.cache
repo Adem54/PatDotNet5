@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6i5MeeGOa8T+GVnDV1TgCL00cxaOnyoL0K61w7e1/odXafvNtq9Tm4XQpPw6pFEr/4olLCAc0ixaxKL63CwWhQ==",
+  "dgSpecHash": "0HEE8Ktxy1s3cRtFBiCRbiJjvf2QaXXogB3t53B/xtycu6dNenbVD3/CVWp+PzzRateOdU7cE35fbQ2gh38zRA==",
   "success": true,
-  "projectFilePath": "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookStore\\WebApi\\WebApi.csproj",
+  "projectFilePath": "c:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookStore\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Data\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Data\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

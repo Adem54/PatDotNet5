@@ -30,11 +30,11 @@ namespace WebApi.Controllers{
     */
     public class BookController:ControllerBase {
 
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         //Uygulama icerisinde degistirilemesin diye readonly yapariz....bu onemli...bunu iyi bilelim..
 
         private readonly IMapper _mapper;
-        public BookController(BookStoreDbContext context, IMapper mapper)
+        public BookController(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper=mapper;

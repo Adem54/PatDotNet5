@@ -8,16 +8,22 @@ namespace WebApi.DbOperations{
      da DbContext e bir parametre gondermesi ve onu da new lemesi gerekiyor ki Database
       baglantisi vs islemleri gerceklestirilmis olsun
   */
-    public class BookStoreDbContext:DbContext
+    public class BookStoreDbContext:DbContext,IBookStoreDbContext
     {
         //DbContextOptions<> bu da yine Microsoft.EntityFrameworkCore dan geliyor
             public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options):base(options)
             {
+                
             }
 
           public  DbSet<Book> Books {get; set;}
           public  DbSet<Genre> Genres {get; set;}
           public DbSet<Author> Authors {get; set;}
+
+         public override int SaveChanges()
+        {
+            return base.SaveChanges();
+        }
     }
 }
 /*

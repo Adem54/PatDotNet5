@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookStore\\WebApi\\WebApi.csproj": {}
+    "c:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookStore\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookStore\\WebApi\\WebApi.csproj": {
+    "c:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookStore\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookStore\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "c:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookStore\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookStore\\WebApi\\WebApi.csproj",
+        "projectPath": "c:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookStore\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\Data\\.nuget\\packages\\",
-        "outputPath": "C:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookStore\\WebApi\\obj\\",
+        "outputPath": "c:\\Adem\\AllGetAcademyWorks\\GetAcademyCSharpJs\\PatDotNet5\\PatikaDotNet5\\BookStore\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Data\\AppData\\Roaming\\NuGet\\NuGet.Config",

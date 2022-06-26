@@ -7,11 +7,11 @@ using WebApi.Entities;
 
 namespace WebApi.Application.BookOperations.Commands.CreateGenre {
     public class CreateGenreCommand {
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
         public CreateGenreModel Model {get; set;}
 
-        public CreateGenreCommand(BookStoreDbContext dbContext, IMapper mapper)
+        public CreateGenreCommand(IBookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper=mapper;

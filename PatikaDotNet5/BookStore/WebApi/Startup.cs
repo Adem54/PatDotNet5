@@ -57,9 +57,18 @@ namespace WebApi
 
             services.AddDbContext<BookStoreDbContext>(options =>
                 options.UseInMemoryDatabase(databaseName:"BookStoreDB"));
+            services.AddScoped<IBookStoreDbContext>(provider=>provider.GetService<BookStoreDbContext>());    
             services.AddAutoMapper(Assembly.GetExecutingAssembly()); 
            // services.AddSingleton<ILoggerService,ConsoleLogger>();   
             services.AddSingleton<ILoggerService,DBLogger>();   
+            //DbContext i biz servis olarak eklemisiz burda, ok ama biz IBookStoreDbContext i 
+            //Scope olarak ekleyecegiz,Scope oalrak ekelmek demek, inject edilen servisin sadece
+            //request lifetime icerisinde yasiyor olmasidir,Bir request geldiginde
+            //IBookStoreDbContext i implente eden ve bizim burdas ekleyecegizm somut siniftan
+            //bir instance olusturyor ve o request te istinaden bir response donene kadar yasiyor
+            //response donup bittigi anda olusturulan instance yok ediliyor ve tekrar yeni bir 
+            //request geldginde tekrar yeniden IBookStoreDbContext e karsilik gelen instance olusturuluyor
+            //ve o request-response islemi sona erene kadar yasamini surduruyor
             
         }
 

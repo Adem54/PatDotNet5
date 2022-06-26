@@ -28,9 +28,9 @@ namespace WebApi.Application.BookOperatins.Commands.CreateBook {
         // burdaki class imiz new lendikten sonra, CreateBookCommand new lendikten sonra 
         //Model properties ini atama yapilacak controller icerisinde ondan dolayi da biz Model.Title
         //deyince, kullanicini gondermis oldugu Title i alabilmmis olacagiz...
-            private readonly BookStoreDbContext _dbContext;
+            private readonly IBookStoreDbContext _dbContext;
             private readonly IMapper _mapper;
-            public CreateBookCommand(BookStoreDbContext dbContext, IMapper mapper)
+            public CreateBookCommand(IBookStoreDbContext dbContext, IMapper mapper)
             {
                 _dbContext=dbContext;
                 _mapper=mapper;
@@ -108,6 +108,7 @@ namespace WebApi.Application.BookOperatins.Commands.CreateBook {
                 public int GenreId {get; set;}//int olarak almam lazm, int value ye ihtiyacim var...
                 public int PageCount {get; set;}
                 public DateTime PublishDate {get; set;}
+                public int AuthorId {get; set;}
               }  
     }   
 }
