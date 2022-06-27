@@ -45,7 +45,7 @@ namespace WebApi.Application.BookOperatins.Commands.CreateBook {
                 var book=_dbContext.Books.SingleOrDefault(book=>book.Title==Model.Title);
                     if(book is not null)
                         //ayni kitap isminde bizde var ise o zaman anlamli bir exception firlatacgiz
-                        throw new InvalidCastException("Kitap zaten mevcut!");
+                        throw new InvalidOperationException("Kitap zaten mevcut!");
                           //Dikkat edelim Model ici dolu olarak geliyor buraya,Controller da parametre olarak geliyor
                         //Ardindan orda, var createCommand=new CreateBookCommand(_context);ve createCommand.Model=newBook
                         //,newBook paramtereden gelen CreateBookModel tipindeki kullanicidan gelen datadir

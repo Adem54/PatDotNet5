@@ -1,0 +1,15 @@
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\bin\Debug\net6.0\ExtensionMethodsTest.exe
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\bin\Debug\net6.0\ExtensionMethodsTest.deps.json
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\bin\Debug\net6.0\ExtensionMethodsTest.runtimeconfig.json
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\bin\Debug\net6.0\ExtensionMethodsTest.dll
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\bin\Debug\net6.0\ExtensionMethodsTest.pdb
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\obj\Debug\net6.0\ExtensionMethodsTest.csproj.AssemblyReference.cache
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\obj\Debug\net6.0\ExtensionMethodsTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\obj\Debug\net6.0\ExtensionMethodsTest.AssemblyInfoInputs.cache
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\obj\Debug\net6.0\ExtensionMethodsTest.AssemblyInfo.cs
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\obj\Debug\net6.0\ExtensionMethodsTest.csproj.CoreCompileInputs.cache
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\obj\Debug\net6.0\ExtensionMethodsTest.dll
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\obj\Debug\net6.0\refint\ExtensionMethodsTest.dll
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\obj\Debug\net6.0\ExtensionMethodsTest.pdb
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\obj\Debug\net6.0\ExtensionMethodsTest.genruntimeconfig.cache
+C:\Adem\AllGetAcademyWorks\GetAcademyCSharpJs\PatDotNet5\PatikaC#Dersler\ExtensionMethodsTest\obj\Debug\net6.0\ref\ExtensionMethodsTest.dll
