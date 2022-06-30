@@ -61,11 +61,12 @@ namespace WebApi.UnitTests.Application.BookOperations.Commands.CreateBook
             //hata mesajlari var
 
             //ASSERT
-            result.Errors.Count.Should().BeGreaterThan(0);//5 tane hata bekliyoruz yani 0 dan buyuk olmali
-                                                          //Simdi biz 1 tane condition a gore ancak test  yazabiliyoruz [Fact] ile ama bizim CreateBookCommandValidator 
-                                                          //icin daha en az 4-5 kontrol yapmam gerekiyor Title girildi digerleri girilmedi ise vs gibi gidip her biri 
-                                                          //icin [Fact] attribute lu method yazmak cok maliyetlidir ondan dolyi biz [Theory] yi kullanarak
-                                                          //bir test methodunda birden fazla kosul test edebilmeyi saglariz
+            result.Errors.Count.Should().BeGreaterThan(0);
+            //5 tane hata bekliyoruz yani 0 dan buyuk olmali
+            //Simdi biz 1 tane condition a gore ancak test  yazabiliyoruz [Fact] ile ama bizim CreateBookCommandValidator 
+            //icin daha en az 4-5 kontrol yapmam gerekiyor Title girildi digerleri girilmedi ise vs gibi gidip her biri 
+            //icin [Fact] attribute lu method yazmak cok maliyetlidir ondan dolyi biz [Theory] yi kullanarak
+            //bir test methodunda birden fazla kosul test edebilmeyi saglariz
         }
 
         [Theory]

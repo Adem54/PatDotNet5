@@ -2,13 +2,14 @@
 using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Application.BookOperations.Commands.CreateGenre;
+
 using WebApi.Application.BookOperations.GenreOperations.Commands.DeleteGenre;
+using WebApi.Application.GenreOperations.Commands.CreateGenre;
 using WebApi.Application.GenreOperations.Commands.UpdateGenre;
 using WebApi.Application.GenreOperations.Queries.GetGenreDetail;
 using WebApi.Application.GenreOperations.Queries.GetGenres;
 using WebApi.DbOperations;
-using static WebApi.Application.BookOperations.Commands.CreateGenre.CreateGenreCommand;
+using static WebApi.Application.GenreOperations.Commands.CreateGenre.CreateGenreCommand;
 
 namespace WebApi.Controllers {
 

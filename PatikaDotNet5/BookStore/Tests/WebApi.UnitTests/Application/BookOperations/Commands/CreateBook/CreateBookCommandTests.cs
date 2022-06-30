@@ -58,6 +58,8 @@ namespace WebApi.UnitTests.Application.BookOperations.Commands.CreateBook
             //Sadece bu test calisirken bir veri olusturulsun ve bu veri test bittgiinde de bitsin istiyoruz
             var book = new Book() { Title = "Test_WhenAlreadyExistBookTitleIsGiven_InvalidOperationException_ShouldBeReturn", PageCount = 100, PublishDate = new System.DateTime(1990, 01, 10), GenreId = 1, AuthorId = 2 };
             //Bunu olusturduk ama database e kaydetmedik...
+            //Bunu bilerek, ayni isimde bir book gondermek icin, once bir tane book ekliyoruz sonra da bu ekledigmiz book title i
+            //disardan gonderiyoruz ki hata alalim ve gorelim gelen hata dogru mu calisiyor
             _context.Books.Add(book);
             _context.SaveChanges();
             //Simdi de command imizin nesnesini olustrururuz

@@ -20,7 +20,7 @@ namespace WebApi.Application.AuthorOperations.Commands.UpdateAuthor{
 
     public void  Handle(){
           var author=_dbContext.Authors.SingleOrDefault(a=>a.Id==AuthorId);
-          if(author is null)throw new InvalidOperationException("Guncellenecek kitap bulunamadi");
+          if(author is null)throw new InvalidOperationException("Guncellenecek kitabin yazari bulunamadi");
           Author auth=new Author();
           author.FirstName=string.IsNullOrEmpty(Model.FirstName) ? author.FirstName : Model.FirstName;   
         //  author.LastName=string.IsNullOrEmpty(Model.FirstName) ? author.LastName : Model.LastName;   

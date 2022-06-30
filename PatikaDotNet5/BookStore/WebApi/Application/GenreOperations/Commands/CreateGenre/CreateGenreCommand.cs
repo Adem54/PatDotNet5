@@ -5,7 +5,7 @@ using AutoMapper;
 using WebApi.DbOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.BookOperations.Commands.CreateGenre {
+namespace WebApi.Application.GenreOperations.Commands.CreateGenre {
     public class CreateGenreCommand {
         private readonly IBookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
@@ -20,7 +20,7 @@ namespace WebApi.Application.BookOperations.Commands.CreateGenre {
         public void Handle()
         {
             var genre=_dbContext.Genres.SingleOrDefault(genre=>genre.Name==Model.Name);
-            if(genre is not null) throw new InvalidCastException("Kitap turu zaten mevcut");
+            if(genre is not null) throw new InvalidOperationException("Kitap turu zaten mevcut");
             //  genre=_mapper.Map<Genre>(Model);
             genre=new Genre();
             genre.Name=Model.Name;

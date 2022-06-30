@@ -18,7 +18,6 @@ namespace WebApi.Application.BookOperations.UpdateBook{
 
         public void Handle(){
             var book=_dbContext.Books.SingleOrDefault(book=>book.Id==BookId);
-          
         if(book is null)throw new InvalidOperationException("Guncellenecek kitap bulunamadi");  
         //Normalde hem 0 degilse yani bos degilse hemde ayni degilse diye bir kontrol yapmak lazm iste onu default keywordunu kullanarak yapiyoruz
             book.GenreId=Model.GenreId != default ? Model.GenreId : book.GenreId;
@@ -40,6 +39,7 @@ namespace WebApi.Application.BookOperations.UpdateBook{
             public int GenreId {get; set;}
             //PublishDate ve PageCount update edilemesin istiyoruz mesela
             //Biz update e sadece 2 alani aciyoruz...
+            
         }
 
     }

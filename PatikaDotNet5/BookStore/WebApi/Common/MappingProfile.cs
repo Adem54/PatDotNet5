@@ -8,7 +8,7 @@ using static WebApi.Aoplication.BookOperations.Queries.GetBooks.GetBooksQuery;
 using static WebApi.Application.AuthorOperations.Queries.GetAuthorDetail.GetAuthorDetailQuery;
 using static WebApi.Application.AuthorOperations.Queries.GetAuthors.GetAuthorsQuery;
 using static WebApi.Application.BookOperatins.Commands.CreateBook.CreateBookCommand;
-using static WebApi.Application.BookOperations.Commands.CreateGenre.CreateGenreCommand;
+
 
 using static WebApi.Application.BookOperations.Queries.GetBookDetail.GetBookDetailQuery;
 using static WebApi.Application.GenreOperations.Queries.GetGenreDetail.GetGenreDetailQuery;
