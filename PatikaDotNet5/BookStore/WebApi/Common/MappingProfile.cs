@@ -13,7 +13,7 @@ using static WebApi.Application.BookOperatins.Commands.CreateBook.CreateBookComm
 using static WebApi.Application.BookOperations.Queries.GetBookDetail.GetBookDetailQuery;
 using static WebApi.Application.GenreOperations.Queries.GetGenreDetail.GetGenreDetailQuery;
 using static WebApi.Application.GenreOperations.Queries.GetGenres.GetGenresQuery;
-
+using static WebApi.Application.UserOperations.Commands.CreateUser.CreateUserCommand;
 
 namespace WebApi.Common.MappingProfile 
 {
@@ -50,6 +50,7 @@ namespace WebApi.Common.MappingProfile
                 CreateMap<Author,AuthorsViewModel>().ForMember(dest=>dest.BirthDate,opt=>opt.MapFrom(src=>src.BirthDate.ToString()));
                 CreateMap<Author,AuthorDetailViewModel>().ForMember(dest=>dest.BirthDate,opt=>opt.MapFrom(src=>src.BirthDate.ToString()));
                 CreateMap<CreateAuthorModel,Author>();
+                CreateMap<CreateUserModel,User>();
                 
             }
             //Ilk parametre source, 2.parametre targettir

@@ -5,6 +5,7 @@ using System.Linq;
 using AutoMapper;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Aoplication.BookOperations.Queries.GetBooks;
 using WebApi.Application.BookOperatins.Commands.CreateBook;
@@ -19,6 +20,9 @@ using static WebApi.Application.BookOperations.Queries.GetBookDetail.GetBookDeta
 using static WebApi.Application.BookOperations.UpdateBook.UpdateBookCommand;
 
 namespace WebApi.Controllers{
+
+    [Authorize]
+//using Microsoft.AspNetCore.Authorization;
 
     [ApiController]//class imzin httpresponse donecegini soyluyoruz burda
     [Route("api/[controller]s")]

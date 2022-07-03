@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,10 +13,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using WebApi.DbOperations;
 using WebApi.Middlewares;
 using WebApi.Services;
+using System.Text;
 
 namespace WebApi
 {
@@ -48,15 +51,42 @@ namespace WebApi
             //istiyorum ben dependency injection ile verdigmiz dependency lerin
         public void ConfigureServices(IServiceCollection services)
         {
+             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt=>
+             {
+                opt.TokenValidationParameters=new TokenValidationParameters()
+                {
+                                       
+                    ValidateAudience=true,//Benim token imiz kimler kullanabilir, audience client im kimler se bunlari validate et diyor, su an kurallari veriyoruz sadece, henuz audience i soylemedik   
+                    ValidateIssuer=true,
+                    //Bu token in dagiticisi,saglayicisi kim,bunun da validasyonunu yap
+                    ValidateLifetime=true,
+                    //Mutlaka lifetime i kontrol et diyoruz,lifetime tamamlandiysa token expirse olsun ve token kullanilamasin
+                    //yetkiloendirmeyi kapat, erisilemesin o token uzerinden artik
+                    ValidateIssuerSigningKey=true,
+                    //Burasi da token i imzalayacagimiz, kriptolayacagimiz,anahtar key, bunu da kontrol et diyoruz
+                    //Issuer demek sertifikayi veren, cikaran demek
+                    ValidIssuer=Configuration["Token:Issuer"],
+                    //Bu token in olusturulurken ki issuer lari sunlardir
+                    //Token IConfiguration dan geliyor
+                    ValidAudience=Configuration["Token:Audience"],
+                     IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Token:SecurityKey"])),
+                     ClockSkew=TimeSpan.Zero,
+                     //Token i ureten sunucunun var oldugu timezone ile token sagladgi client in timezonu birbirinden farkli
+                     //oldugu durumda,token in tum zone larda adil birsekilde kullanilabilmesi icin ClockSkew parametresini
+                     //kullaniriz,Token in expiration time i uzerine ne kadar time koyacagimizi beliritiyor, biz su an boyle bir
+                     //concern ilgimiz olmadigi icin zero verdik yani dogrudan expire time nekadar ise o kadar sure sonunca token
+                     //invalid olsun demis oluyoruz
 
+                  
+                };
+             });    
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
             });
-
             services.AddDbContext<BookStoreDbContext>(options =>
-                options.UseInMemoryDatabase(databaseName:"BookStoreDB"));
+            options.UseInMemoryDatabase(databaseName:"BookStoreDB"));
             services.AddScoped<IBookStoreDbContext>(provider=>provider.GetService<BookStoreDbContext>());    
             services.AddAutoMapper(Assembly.GetExecutingAssembly()); 
            // services.AddSingleton<ILoggerService,ConsoleLogger>();   
@@ -81,6 +111,8 @@ namespace WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi v1"));
             }
+
+             app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
