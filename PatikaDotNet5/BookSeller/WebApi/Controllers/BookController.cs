@@ -2,17 +2,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.BookOperations.CreateBook;
 using WebApi.BookOperations.GetBookDetail;
 using WebApi.BookOperations.GetBooks;
-// using WebApi.BookOperations.GetBooks;
 using WebApi.DbOperations;
 using static WebApi.BookOperations.CreateBook.CreateBookCommand;
 using static WebApi.BookOperations.GetBookDetail.GetBookDetailQuery;
 
 namespace WebApi.Controllers{
 
+    [Authorize]
     [ApiController]//class imzin httpresponse donecegini soyluyoruz burda
     [Route("api/[controller]s")]
     /*

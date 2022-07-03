@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using WebApi.Application.UserOperations.Commands.CreateToken;
 using WebApi.Application.UserOperations.Commands.CreateUser;
+using WebApi.Application.UserOperations.Commands.RefreshToken;
 using WebApi.DbOperations;
 using WebApi.TokenOperations.Models;
 using static WebApi.Application.UserOperations.Commands.CreateToken.CreateTokenCommand;
@@ -26,7 +27,6 @@ namespace WebApi.Controllers {
         //using AutoMapper.Configuration; burdan gelir ve benim config bilgilerine ulasmami saglar
         //Biz uygulama icindeki string olarak tutulan config ayarlarini appsetting de tutuyorduk
         //IConfiguration bizim appsettings altindaki verilere ulasmamizi sagliyor
-
         public UserController(IBookStoreDbContext context,IConfiguration configuration,IMapper mapper)
         {
             _context = context;
@@ -44,9 +44,111 @@ namespace WebApi.Controllers {
             return Ok();
         }
 
-//Ornegin biz token i disardan thirdpart bir kutuphane veya service den aldigmiz zamanlarda
-//da bu connect/token cok standart kullanilan bir isimdir....
+
         [HttpPost("connect/token")]//https://localhost:5001/api/users/connect/token
+        public ActionResult<Token> CreateToken([FromBody] CreateTokenModel login)
+        {
+            CreateTokenCommand command=new CreateTokenCommand(_context,_configuration,_mapper);
+            command.Model=login;
+            var token=command.Handle();
+            return token;
+        }
+
+         [HttpGet("refreshToken")]// https://localhost:5001/api/users/refreshToken?token=9ada6cc5-d998-46ef-aecc-2feb697cf5de
+
+         //Refreshtoken i bu request e query den gonderecegiz...queryden okuyacagiz
+        public ActionResult<Token> RefreshToken([FromQuery] string token)
+        {
+            RefreshTokenCommand command=new RefreshTokenCommand(_context,_configuration);
+            command.RefreshToken=token;
+            var resultToken=command.Handle();
+            return resultToken;
+        }
+        /*
+        Once yeni bir login ile bir accesstoken ve refreshtoken aliyoruz
+        https://localhost:5001/api/users/connect/token
+                {
+            "email": "adem5434e@gmail.com",
+            "password": "Adem5434@"
+               }
+
+               
+        {
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NTY4NDkwMzgsImV4cCI6MTY1Njg0OTkzOCwiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.toevnbsIcy0QWcTT-0FRyrSAvpYpGTUodoeuJ94n11I",
+    "expiration": "2022-07-03T14:05:38.9348876+02:00",
+    "refreshToken": "9ada6cc5-d998-46ef-aecc-2feb697cf5de"
+}
+        Sonra burdaki accesstoken i alip refreshtoken request i icin endpointe gonderiyoruz
+               https://localhost:5001/api/users/refreshToken?token=9ada6cc5-d998-46ef-aecc-2feb697cf5de
+
+               {
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NTY4NDkyMDUsImV4cCI6MTY1Njg1MDEwNSwiaXNzIjoid3d3LnRlc3QuY29tIiwiYXVkIjoid3d3LnRlc3QuY29tIn0.LjrIoJDtP_6Vfx8vlxcDjSCMbI9bWqJlPWmub9kCw4A",
+    "expiration": "2022-07-03T14:08:25.3918898+02:00",
+    "refreshToken": "1c370a60-965d-4391-86ac-7ce7452bfcc0"
+}
+ Ve bize yeniden accesstoken vermis oluyor ve suresi yeniden baslamis ve yaninda da yeni refresht token uretilmis birsekilde
+        */
+    } 
+    
+    }
+    /*
+    appsettings.json da neler var bakalim
+    {
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
+}
+Biz Startupda Issuer,Audience ve SecurityKey belirlemistik, bunlar olacak diye belirtmistik
+Bunlari da karsilarina demisiz ki bir config olarak bunlari git token ve security olarak
+token objesi altinda issuer, audience ve security key olarak git bul demisiz..
+    Biz Startup.cs dde Authentication ayarlarini yaparken bazi kurallar belirlemistik
+    Burda kullanilan Configuration class i bizim appsettings.json imiza bakiyor
+    Dolayisi ile bizim bu token a karsilik geleen audience,issuer ve securitykey i appsettings.json
+    a eklemem gerekiyor, buraya onlari ekledigmiz zaman cok kolay bir sekilde calisma aninda
+    Configuration clasass i appsettings den onlari bulacaktir...Ki bu bir middleware olarak calistigi
+    icin gonderilen request ile controller da ki response actionlari arasindaki 
+    zaamn diliminde calisacaktir.
+    
+    Issuer:Token i dagitan server gibi dusunebiliriz, token i veren burasi o yuzden www.test.com su asamada
+    saglayici kendimiz old icin ekstra bir confige gerek yok
+    Audience:"www.test.com"
+    Security key i biraz uzun girmek gerekir yoksa hata alinabilir, korumak icin
+    Simdi appsettings.json a Token objesini ekleyecegiz...
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "Token":{
+    "Issuer":"www.test.com",
+    "Audience":"www.test.com",
+    "SecurityKey":"This is my custom secret key for authentication"
+  }
+}
+
+Token bilgilerini de appsettings.json da verdgimize gore artik Startup.cs icindeki Configuration
+classimiz calisma aninda gidip token a karsilik gelen issuer,audience,securitykey i bulabilecek
+
+     ValidIssuer=Configuration["Token:Issuer"],
+    Bu token in olusturulurken ki issuer lari sunlardir
+    Token IConfiguration dan geliyor
+    ValidAudience=Configuration["Token:Auidience"],
+        IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Token:SecurityKey"])),
+    */
+
+    //Ornegin biz token i disardan thirdpart bir kutuphane veya service den aldigmiz zamanlarda
+//da bu connect/token cok standart kullanilan bir isimdir....
+       // [HttpPost("connect/token")]//https://localhost:5001/api/users/connect/token
         //Bu geriye bir token donecek Token isminde bir model olusturacagiz
         //https://localhost:5001/api/users/connect/token bu endpinte istek gonderince body den de
         //login bilgileri bekleyecek bizden,email ve password bilgileri cunku  login islemidir
@@ -116,68 +218,11 @@ diyoruz,Startup da da token i cozmek icin gerekli olan configleri veriyoruz
  Bunlar aslinda farkli projeler icinde olabilir...,identityprovider ayri bir proje icinde disarda konumlanir
  PEKI REFRESHTOKEN ILE TEKRAR BIR ACCESSTOKEN NASIL ALINIR ONA BAKALIM
 }
-    */
-        public ActionResult<Token> CreateToken([FromBody] CreateTokenModel login)
+   public ActionResult<Token> CreateToken([FromBody] CreateTokenModel login)
         {
             CreateTokenCommand command=new CreateTokenCommand(_context,_configuration,_mapper);
             command.Model=login;
             var token=command.Handle();
             return token;
         }
-    } 
-    
-    }
-    /*
-    appsettings.json da neler var bakalim
-    {
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft": "Warning",
-      "Microsoft.Hosting.Lifetime": "Information"
-    }
-  },
-  "AllowedHosts": "*"
-}
-Biz Startupda Issuer,Audience ve SecurityKey belirlemistik, bunlar olacak diye belirtmistik
-Bunlari da karsilarina demisiz ki bir config olarak bunlari git token ve security olarak
-token objesi altinda issuer, audience ve security key olarak git bul demisiz..
-    Biz Startup.cs dde Authentication ayarlarini yaparken bazi kurallar belirlemistik
-    Burda kullanilan Configuration class i bizim appsettings.json imiza bakiyor
-    Dolayisi ile bizim bu token a karsilik geleen audience,issuer ve securitykey i appsettings.json
-    a eklemem gerekiyor, buraya onlari ekledigmiz zaman cok kolay bir sekilde calisma aninda
-    Configuration clasass i appsettings den onlari bulacaktir...Ki bu bir middleware olarak calistigi
-    icin gonderilen request ile controller da ki response actionlari arasindaki 
-    zaamn diliminde calisacaktir.
-    
-    Issuer:Token i dagitan server gibi dusunebiliriz, token i veren burasi o yuzden www.test.com su asamada
-    saglayici kendimiz old icin ekstra bir confige gerek yok
-    Audience:"www.test.com"
-    Security key i biraz uzun girmek gerekir yoksa hata alinabilir, korumak icin
-    Simdi appsettings.json a Token objesini ekleyecegiz...
-
-{
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft": "Warning",
-      "Microsoft.Hosting.Lifetime": "Information"
-    }
-  },
-  "AllowedHosts": "*",
-  "Token":{
-    "Issuer":"www.test.com",
-    "Audience":"www.test.com",
-    "SecurityKey":"This is my custom secret key for authentication"
-  }
-}
-
-Token bilgilerini de appsettings.json da verdgimize gore artik Startup.cs icindeki Configuration
-classimiz calisma aninda gidip token a karsilik gelen issuer,audience,securitykey i bulabilecek
-
-     ValidIssuer=Configuration["Token:Issuer"],
-    Bu token in olusturulurken ki issuer lari sunlardir
-    Token IConfiguration dan geliyor
-    ValidAudience=Configuration["Token:Auidience"],
-        IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Token:SecurityKey"])),
-    */
+*/

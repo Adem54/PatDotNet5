@@ -1,11 +1,13 @@
 
 
+using WebApi.DbOperations;
+
 namespace WebApi.BookOperations.UpdateBook{
     public class UpdateBookCommand{
 
-        private readonly BookStoreDbContext _dbContext;
+        private readonly BookSellerDbContext _dbContext;
 
-        public UpdateBookCommand(BookStoreDbContext dbContext)
+        public UpdateBookCommand(BookSellerDbContext dbContext)
         {
             
         }

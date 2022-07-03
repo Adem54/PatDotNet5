@@ -34,6 +34,17 @@ namespace WebApi.BookOperations.GetBooks{
             return vm;
         }
 
+
+        public class BooksViewModel
+        {
+            public string Title {get; set;}
+            public int PageCount {get; set;}
+            public string PublishDate {get; set;}
+            public string Genre {get; set;}
+        }
+    }
+}
+
 /*
 Biz entity mizdeki datalari aynen oldugu gibi kullanici ile paylasmak istemiyorz onun yerine,
 biz kullaniciya ihtiyaci olan, gormesi gereken datalari gormesi gereken formatta gosterecegiz...
@@ -49,12 +60,3 @@ olusturacagiz ve _context.Books umuzdaki her bir book icerisinde datalari BookVi
 Bu javascriptte map ile yapiliyor yani tek tek _context.Books icindeki tum Book lari donderip her donmede
 de new BookViewModel in propertylerine set islemi yaparak tum Book lari List<BookViewModel> icerisine ekleyecegiz..
   */
-        public class BooksViewModel
-        {
-            public string Title {get; set;}
-            public int PageCount {get; set;}
-            public string PublishDate {get; set;}
-            public string Genre {get; set;}
-        }
-    }
-}
