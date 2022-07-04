@@ -64,6 +64,9 @@ namespace WebApi.Controllers {
             var resultToken=command.Handle();
             return resultToken;
         }
+        } 
+    
+    }
         /*
         Once yeni bir login ile bir accesstoken ve refreshtoken aliyoruz
         https://localhost:5001/api/users/connect/token
@@ -88,9 +91,7 @@ namespace WebApi.Controllers {
 }
  Ve bize yeniden accesstoken vermis oluyor ve suresi yeniden baslamis ve yaninda da yeni refresht token uretilmis birsekilde
         */
-    } 
     
-    }
     /*
     appsettings.json da neler var bakalim
     {
